@@ -1,0 +1,694 @@
+
+/* ############################################ Basic Declarations ################################ */
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+a {
+	font-size: 1.6rem;
+	text-decoration: none;    
+}
+
+p, li {
+	font-size: 1.6rem;
+	margin-bottom: 0.5em;
+	letter-spacing: 0.1em;
+}
+
+h1, h2, h3 {
+	font-size: 2rem;
+	margin-bottom: 0.5em;
+	font-weight: 500;
+}
+
+/* ################################################ Header Styling  ########################### */
+
+.header {
+	height: 95vh;
+	background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) , url('/CSS_Animation/11.jpg');
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	margin-bottom: 6rem;
+}
+
+.header .navbar {
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+	background-color: #181818;
+	display: flex;
+	justify-content: space-around;
+}
+
+.navbar .logo {
+	margin: 0.8rem;
+	padding: 2rem;
+}
+
+.navbar .logo h1 {
+	margin-bottom: 0;
+	color: #eee;
+	font-weight: 700;
+}
+
+.navbar .icon {
+	position: relative;
+	margin: 0.5rem;
+	width: 30rem;
+	padding: 0.5rem;
+	overflow: hidden;
+}
+
+.navbar .icon::before {
+	content: 'Search Here..';
+	color: #909090;
+	display: inline-block;
+	position: absolute;
+	background-color: #303035;
+	border-radius: 4rem;
+	margin: 0.5rem;
+	padding: 1.8rem 1.5rem;
+	font-size: 1.6rem;
+	top: 0;
+	left: 75%;
+	width: 95%;
+	height: 85%;
+	overflow: hidden;
+	float: left;
+	opacity: 0;
+	z-index: 1;
+	transition: all 0.5s;
+}
+
+.icon:hover::before {
+	opacity: 1;
+	top: 0;
+	left: 0;
+}
+
+.navbar .icon .search {
+	float: right;
+	position: absolute;
+	top: 3.5%;
+	right: 3%;
+	background-color: #303035;
+	color: #fff;
+	margin: 1rem;
+	padding: 12px;
+	border-radius: 20px;
+	z-index: 2;
+}
+
+.navbar .icon .search:hover {
+	background-color: #fff;
+	color: red;
+}
+
+.navbar .nav-items {
+	padding: 1rem;
+}
+
+.navbar .nav-item {
+	display: inline-block;
+	color: #eee;
+	padding: 1rem;
+	margin: 1rem;
+}
+
+/* ################################################ Animated Text ################################# */
+
+.anim-text {
+	text-align: center;
+	margin-bottom: 5rem;
+}
+
+.anim-text h1 {
+	display: inline-block;
+	font-size: 42px;
+	color: #565656;
+	text-shadow: 2px 3px 1px #cdcdcd;
+	opacity: 0.8;
+}
+
+.anim-text .line {
+	font-size: 42px;
+	font-weight: 500;
+	color: #cecece;
+	opacity: 0.8;
+	animation: blink 0.8s infinite ease-in-out;
+}
+
+@keyframes blink {
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+
+
+/* ########################################### Image Accordion Effect ############################ */
+
+.slider {
+	padding: 5px 0;
+	margin: 0 auto;
+	width: 1140px;
+}
+
+.gallery {
+	display: flex;
+	flex-direction: rox;
+	width: 100%;
+	height: 80vh;
+}
+
+.photo {
+	flex: 1;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: flex 0.8s ease;
+}
+
+.photo1 {
+	background: url('/CSS_Animation/2.jpg');
+}
+
+.photo2 {
+	background: url('/CSS_Animation/5.jpg');
+}
+
+.photo3 {
+	background: url('/CSS_Animation/6.jpg');
+}
+
+.photo4 {
+	background: url('/CSS_Animation/7.jpg');
+}
+
+.photo5 {
+	background: url('/CSS_Animation/8.jpg');
+}
+
+.photo6 {
+	background: url('/CSS_Animation/9.jpg');
+}
+
+.photo:hover {
+	flex: 5;
+}
+
+
+
+
+/* ################################################# Simple Para ################################ */
+
+.para {
+	margin: 10rem;
+	text-align: justify;
+	letter-spacing: 0.01em;
+}
+
+/* ############################################# Images Animation Grid ########################### */
+
+.grid-anim {
+	background-color: orange;
+	padding: 2.5rem 0;
+	margin-bottom: 5rem;
+}
+
+.grid {
+	width: 1000px;
+	margin: 0 auto;
+	/*background-color: #fff;*/
+	padding-left: 1px;
+	padding-top: 1px;
+}
+
+.grid img {
+	height: 95px;
+	width: 97px;
+	scale: 1.1;
+}
+
+.grid-anim:hover img {
+	animation: rotate 3s ease-out;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotateY(90deg); 
+	}
+	to {
+		transform: rotateY(0deg);
+	}
+}
+
+
+
+
+/* ############################################# Boxes Hover Effect ############################# */
+
+.div-box {
+	width: 900px;
+	margin: 100px auto;
+	display: flex;
+}
+
+.boxes {
+	padding: 6rem;
+	font-size: 1.8rem;
+	text-align: center;
+	opacity: 0.9;
+	transition: scale 250ms ease-in;
+}
+
+.box1 {
+	background-color: lightsalmon;
+	color: #fff;
+}
+
+.box2 {
+	background-color: lightblue;
+	color: #fff;
+}
+
+.box3 {
+	background-color: lightpink;
+	color: #fff;
+}
+
+.boxes:hover {
+	scale: 1.08;
+	opacity: 0.8;
+}
+
+/* ########################################## Blocks Styling ##################################### */
+
+.div-block {
+	max-width: 1000px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.b-div {
+	width: 100%;
+	height: 35rem;
+	margin: 1rem 0;
+}
+
+.block1 {
+	position: relative;
+	overflow: hidden;
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.block2 {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	width: 50%;
+	float: right;
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.text-wrap::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	opacity: 0;
+	z-index: 1;
+	transition: opacity 0.5s;
+}
+
+.text-wrap:hover::after {
+	opacity: 1;
+}
+
+.img-text {
+	border-left: 5px solid #fff;
+	position: absolute;
+	overflow: hidden;
+	letter-spacing: 0;
+	top: 0;
+	left: 70%;
+	margin: 3rem;
+	padding: 0 4rem 0 2.5rem;
+	color: #fff;
+	opacity: 0;
+	z-index: 2;
+	transition: all 1s;
+}
+
+.img-text h1 {
+	font-family: 'Merriweather', serif;
+}
+
+.img-text p {
+	font-family: 'Poppins', sans-serif;
+}
+
+.text-wrap:hover .img-text {
+	opacity: 1;
+	top: 0;
+	left: 0;
+}
+
+.text-block {
+	font-size: 1.4rem;
+	position: relative;
+}
+
+.text-block::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	opacity: 0;
+	z-index: 1;
+	transition: opacity 0.5s;
+}
+
+.text-block:hover::after {
+	opacity: 1;
+}
+
+.img-text {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+}
+
+
+
+
+/* ################################################ Quotes ##################################### */
+
+.q1 {
+	border-left: 4px solid black;
+	margin: 1rem;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	font-family: 'Itim', cursive;
+	font-size:  1.6rem;
+	margin-bottom: 0;
+	letter-spacing: 0;
+}
+
+.q2 {
+	border-right: 4px solid black;
+	margin: 1rem;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	text-align: right;
+	font-family: 'Itim', cursive;
+	font-size: 1.6rem;
+	margin-bottom: 0;
+	letter-spacing: 0;
+}
+
+
+
+
+
+
+/* ######################################### Block Backgrounds ################################# */
+
+.b2 {
+	background-color: #e8ac07;  /*#b88909*/
+}
+
+.b3 {
+	background-color: #e65705;  /*#c24904*/
+}
+
+.b6 {
+	background-color: #04de83;  /*#04bd70*/
+}
+
+.b7 {
+	background-color: #057fe3;  /*#0467b8*/
+}
+
+.b10 {
+	background-color: #cb09ed;  /*#9405ad*/
+}
+
+/* ####################################### Pricing Table Styling ############################## */
+
+.pricing {
+	display: flex;
+	justify-content: center;
+	margin: 5rem 0;
+}
+
+.table {
+	text-align: center;
+	position: relative;
+	padding-bottom: 5rem; 
+	border: 1px solid #cdcdcd;
+}
+
+.pricing .table .heading {
+	height: 12rem;
+	background: linear-gradient(to top, rgba(192, 192, 192, 0.3) 0%, rgba(245, 245, 245, 0.3) 100%); 
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2rem;
+	margin-bottom: 6rem;
+	z-index: 1; 
+}
+
+.pricing .table .price {
+	border: 6.5px solid #fff;
+	color: #555;
+	display: inline-block;
+	position: absolute;
+	border-radius: 5rem;
+	padding: 3rem 0;
+	z-index: 2;
+	background: linear-gradient(to bottom, #c0c0c0 0%, #f5f5f5 9%);
+	height: 10rem;
+	width: 10rem;
+	top: 8rem;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.pricing .table .sign {
+	display: inline-block;
+	border-radius: 5px;
+	font-family: 'Montserrat', sans-serif;
+	color: #555;
+	border-bottom: 1px solid rgba(100, 100, 100, 1);
+	padding: 0.8rem 1.5rem;
+	color: #fff;
+	background-color: #2eb82e;
+	margin: 2rem 0;
+}
+
+.pricing p {
+	letter-spacing: 0;
+	border-top: 1px solid #cdcdcd;
+	color: #555;
+	padding: 0.8rem 1rem;
+	margin: 0 1rem;
+}
+
+.pricing .second {
+	transform: translateY(-2rem);
+	box-shadow: 5px 0 5px 2px #cdcdcd, -5px 0 7px 2px #cdcdcd; 
+}
+
+
+/* ########################################## Footer Styling ################################## */
+
+.footer {
+	text-align: center;
+	background-color: #303035;
+	color: #fff;
+	padding-bottom: 2rem;
+}
+
+.footer .media {
+	display: flex;
+	justify-content: center;
+}
+
+.footer .m-icon {
+	width: 8rem;
+	height: 12rem;
+	padding: 3.5rem 0;
+	position: relative;
+}
+
+.footer .media i {
+	color: #fff;
+	position: relative;
+	padding: 10px;
+	border-radius: 40px;
+	background-color: #565656;
+}
+
+.footer .media i.face {
+	padding: 10px 15px;
+}
+
+.footer .media i.pin {
+	padding: 10px 12px;
+}
+
+i.face:hover {
+	background-color: #6666ff;
+}
+
+i.twit:hover {
+	background-color: skyblue;
+}
+
+i.git:hover {
+	background-color: black;
+}
+
+i.drib:hover {
+	background-color: #ff0066;
+}
+
+i.pin:hover {
+	background-color: red;
+}
+
+.facebook::after {
+	content: 'Facebook';
+	color: #6666ff;
+	background-color: #fff;
+	width: 100%;
+	padding: 0.5rem;
+	margin: 5px auto;
+	position: absolute;
+	top: 45%;
+	left: 0;
+	opacity: 0;
+	transition: all 0.5s;
+}
+
+.facebook:hover::after {
+	opacity: 1;
+	top: 0;
+	left: 0;
+}
+
+.twitter::after {
+	content: 'Twitter';
+	color: skyblue;
+	width: 100%;
+	background-color: #fff;
+	padding: 0.5rem;
+	margin: 5px auto;
+	position: absolute;
+	top: 45%;
+	left: 0;
+	opacity: 0;
+	transition: all 0.5s;
+}
+
+.twitter:hover::after {
+	opacity: 1;
+	top: 0;
+	left: 0;
+}
+
+.github::after {
+	content: 'Github';
+	display: block;
+	width: 100%;
+	background-color: #fff;
+	color: black;
+	padding: 0.5rem;
+	margin: 5px auto;
+	position: absolute;
+	top: 45%;
+	left: 0;
+	opacity: 0;
+	transition: all 0.5s;
+}
+
+.github:hover::after {
+	opacity: 1;
+	top: 0;
+	left: 0;
+}
+
+.dribble::after {
+	content: 'Dribble';
+	display: block;
+	width: 100%;
+	background-color: #fff;
+	color: #ff0066;
+	padding: 0.5rem;
+	margin: 5px auto;
+	position: absolute;
+	top: 45%;
+	left: 0;
+	opacity: 0;
+	transition: all 0.5s;
+}
+
+.dribble:hover::after {
+	opacity: 1;
+	top: 0;
+	left: 0;
+}
+
+.pinterest::after {
+	content: 'Pinterest';
+	display: block;
+	width: 100%;
+	background-color: #fff;
+	color: red;
+	padding: 0.5rem;
+	margin: 5px auto;
+	position: absolute;
+	top: 45%;
+	left: 0;
+	opacity: 0;
+	transition: all 0.5s;
+}
+
+.pinterest:hover::after {
+	opacity: 1;
+	top: 0;
+	left: 0;
+}
